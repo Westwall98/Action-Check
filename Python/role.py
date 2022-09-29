@@ -16,7 +16,7 @@ Dailyroomlist = [['7F','Boardroom']]
 def run(F5roomlist,F7roomlist,Dailyroomlist):
 
 	weekday = datetime.date.today().isoweekday()
-	apiurl = "https://api.westwall.vip/v1/sender/CNzjsKwGEiJBRDVZRVNISDNJWk9RM05LTkpOV1pRM09TWFhZTEFPT1Q0IgkIAhoFQ2hlY2sqIkFFUUM3VFlSVTdZSlFQVlZSQklXNVpJNkNWNU9PRlI1N1U..RK2ROlBmZIXp_c2_0BL7mZVYsm_W5hxtjfqKjjk3aQo"
+	apiurl = os.getenv('URL')
 	apidate = datetime.date.today()
 	payload={'text': '{}会议室巡检运行成功'.format(apidate)}
 
