@@ -26,8 +26,7 @@ def run(F5roomlist,F7roomlist,Dailyroomlist):
 		run5F(F5roomlist)
 	elif weekday == 5:
 		runDaily(Dailyroomlist)
-    
-  response = requests.post(apiurl, data = payload)
+	response = requests.post(apiurl, data = payload)
 
 def run5F(F5roomlist):
 	
