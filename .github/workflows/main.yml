@@ -32,6 +32,8 @@ jobs:
       - name: 'Install requirements'
         run: pip install -r ./Python/requirements.txt
       - name: 'Working'
+        env: 
+          URL: ${{ secrets.URL }} 
         run: |
           sudo cp -p ./chrome/chromedriver /usr/bin/
           chmod -R 777 /usr/bin/chromedriver
