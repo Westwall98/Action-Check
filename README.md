@@ -8,4 +8,4 @@ timedatectl set-timezone Asia/Shanghai
 
 crontab -e打开计划任务文件
 
-45 8 * * 1-5 python3 /root/tmp/schedule.py
+45 8 * * 1-5 python3 /root/tmp/schedule.py > /dev/null 2>&1
