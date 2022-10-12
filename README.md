@@ -8,6 +8,10 @@ https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 
 sudo dpkg -i google-chrome-stable_current_amd64.deb
 
+# 查找对应版本号的Chromedriver
+
+https://chromedriver.storage.googleapis.com/index.html
+
 # Linux系统设置东八区时间
 
 sudo timedatectl set-timezone Asia/Shanghai
