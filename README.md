@@ -16,4 +16,4 @@ vim /etc/crontab
 
 crontab -e
 
-45 8 * * 1-5 python3 /home/ethan/schedule.py > /dev/null 2>&1
+45 8 * * 1-5 python3 /home/ethan/schedule.py
