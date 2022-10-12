@@ -1,4 +1,5 @@
 from selenium import webdriver
+from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.by import By
 from time import sleep
 from datetime import date
@@ -19,7 +20,7 @@ chrome_options.add_argument('--headless')
 chrome_options.add_argument('--no-sandbox')
 chrome_options.add_argument('--disable-gpu')
 chrome_options.add_argument('--disable-dev-shm-usage')
-chromedriver = "/usr/bin/chromedriver"
+chromedriver = ChromeDriverManager().install()
 os.environ["webdriver.chrome.driver"] = chromedriver
 
 def run(roomlistdict):
