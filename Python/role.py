@@ -49,7 +49,7 @@ def run(roomlistdict):
 
 def run3F(roomlistdict):
 	
-	driver = webdriver.Chrome(chrome_options=chrome_options,executable_path=chromedriver)
+	driver = webdriver.Chrome(options=chrome_options,executable_path=chromedriver)
 	driver.get(os.getenv('FORM'))
 	sleep(1)
 
@@ -74,7 +74,7 @@ def run3F(roomlistdict):
 
 def run5F(roomlistdict):
 	
-	driver = webdriver.Chrome(chrome_options=chrome_options,executable_path=chromedriver)
+	driver = webdriver.Chrome(options=chrome_options,executable_path=chromedriver)
 	driver.get(os.getenv('FORM'))
 	sleep(1)
 
@@ -99,7 +99,7 @@ def run5F(roomlistdict):
 
 def run6F(roomlistdict):
 	
-	driver = webdriver.Chrome(chrome_options=chrome_options,executable_path=chromedriver)
+	driver = webdriver.Chrome(options=chrome_options,executable_path=chromedriver)
 	driver.get(os.getenv('FORM'))
 	sleep(1)
 
@@ -124,7 +124,7 @@ def run6F(roomlistdict):
 
 def run7F(roomlistdict):
 	
-	driver = webdriver.Chrome(chrome_options=chrome_options,executable_path=chromedriver)
+	driver = webdriver.Chrome(options=chrome_options,executable_path=chromedriver)
 	driver.get(os.getenv('FORM'))
 	sleep(1)
 
@@ -149,7 +149,7 @@ def run7F(roomlistdict):
 
 def runDaily(roomlistdict):
 	
-	driver = webdriver.Chrome(chrome_options=chrome_options,executable_path=chromedriver)
+	driver = webdriver.Chrome(options=chrome_options,executable_path=chromedriver)
 	driver.get(os.getenv('FORM'))
 	sleep(1)
 
