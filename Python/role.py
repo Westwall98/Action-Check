@@ -38,10 +38,8 @@ def run(roomlistdict):
 		print('Daily Success')
 	
 	response = requests.post(apiurl, data = payload)
-	
 
 def run3F(roomlistdict):
-	
 	chrome_options = webdriver.ChromeOptions()
 	chrome_options.add_argument('--headless')
 	chrome_options.add_argument('--no-sandbox')
@@ -53,7 +51,7 @@ def run3F(roomlistdict):
 	driver.get("https://forms.office.com/r/3AQwbrGbms")
 	sleep(2)
 
-	for meetingroom3 in roomlistdict[3].values:
+	for meetingroom3 in roomlistdict[3].values():
 		driver.find_element(By.XPATH,value="//div[@aria-posinset='0']").click()
 		sleep(0.5)
 		driver.find_element(By.XPATH,value="//div[@aria-label='3F']").click()
@@ -73,7 +71,6 @@ def run3F(roomlistdict):
 	driver.close()
 
 def run5F(roomlistdict):
-
 	chrome_options = webdriver.ChromeOptions()
 	chrome_options.add_argument('--headless')
 	chrome_options.add_argument('--no-sandbox')
@@ -85,7 +82,7 @@ def run5F(roomlistdict):
 	driver.get("https://forms.office.com/r/3AQwbrGbms")
 	sleep(2)
 
-	for meetingroom5 in roomlistdict[5].values:
+	for meetingroom5 in roomlistdict[5].values():
 		driver.find_element(By.XPATH,value="//div[@aria-posinset='0']").click()
 		sleep(0.5)
 		driver.find_element(By.XPATH,value="//div[@aria-label='5F']").click()
@@ -105,7 +102,6 @@ def run5F(roomlistdict):
 	driver.close()
 
 def run6F(roomlistdict):
-	
 	chrome_options = webdriver.ChromeOptions()
 	chrome_options.add_argument('--headless')
 	chrome_options.add_argument('--no-sandbox')
@@ -117,7 +113,7 @@ def run6F(roomlistdict):
 	driver.get("https://forms.office.com/r/3AQwbrGbms")
 	sleep(2)
 
-	for meetingroom6 in roomlistdict[6].values:
+	for meetingroom6 in roomlistdict[6].values():
 		driver.find_element(By.XPATH,value="//div[@aria-posinset='0']").click()
 		sleep(0.5)
 		driver.find_element(By.XPATH,value="//div[@aria-label='6F']").click()
@@ -137,7 +133,6 @@ def run6F(roomlistdict):
 	driver.close()
 
 def run7F(roomlistdict):
-	
 	chrome_options = webdriver.ChromeOptions()
 	chrome_options.add_argument('--headless')
 	chrome_options.add_argument('--no-sandbox')
@@ -149,7 +144,7 @@ def run7F(roomlistdict):
 	driver.get("https://forms.office.com/r/3AQwbrGbms")
 	sleep(2)
 
-	for meetingroom7 in roomlistdict[7].values:
+	for meetingroom7 in roomlistdict[7].values():
 		driver.find_element(By.XPATH,value="//div[@aria-posinset='0']").click()
 		sleep(0.5)
 		driver.find_element(By.XPATH,value="//div[@aria-label='7F']").click()
@@ -169,7 +164,6 @@ def run7F(roomlistdict):
 	driver.close()
 
 def runDaily(roomlistdict):
-	
 	chrome_options = webdriver.ChromeOptions()
 	chrome_options.add_argument('--headless')
 	chrome_options.add_argument('--no-sandbox')
