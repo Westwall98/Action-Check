@@ -51,7 +51,7 @@ def run3F(roomlistdict):
 	
 	driver = webdriver.Chrome(options=chrome_options,executable_path=chromedriver)
 	driver.get(os.getenv('FORM'))
-	sleep(1)
+	sleep(3)
 
 	for meetingroom3 in roomlistdict[3].values():
 		driver.find_element(By.XPATH,value="//div[@aria-posinset='0']").click()
@@ -76,7 +76,7 @@ def run5F(roomlistdict):
 	
 	driver = webdriver.Chrome(options=chrome_options,executable_path=chromedriver)
 	driver.get(os.getenv('FORM'))
-	sleep(1)
+	sleep(3)
 
 	for meetingroom5 in roomlistdict[5].values():
 		driver.find_element(By.XPATH,value="//div[@aria-posinset='0']").click()
@@ -101,7 +101,7 @@ def run6F(roomlistdict):
 	
 	driver = webdriver.Chrome(options=chrome_options,executable_path=chromedriver)
 	driver.get(os.getenv('FORM'))
-	sleep(1)
+	sleep(3)
 
 	for meetingroom6 in roomlistdict[6].values():
 		driver.find_element(By.XPATH,value="//div[@aria-posinset='0']").click()
@@ -126,7 +126,7 @@ def run7F(roomlistdict):
 	
 	driver = webdriver.Chrome(options=chrome_options,executable_path=chromedriver)
 	driver.get(os.getenv('FORM'))
-	sleep(1)
+	sleep(3)
 
 	for meetingroom7 in roomlistdict[7].values():
 		driver.find_element(By.XPATH,value="//div[@aria-posinset='0']").click()
@@ -151,7 +151,7 @@ def runDaily(roomlistdict):
 	
 	driver = webdriver.Chrome(options=chrome_options,executable_path=chromedriver)
 	driver.get(os.getenv('FORM'))
-	sleep(1)
+	sleep(3)
 
 	for Dailycheckresult in roomlistdict[0].values():
 		driver.find_element(By.XPATH,value="//div[@aria-posinset='0']").click()
