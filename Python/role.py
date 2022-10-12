@@ -21,7 +21,6 @@ chrome_options.add_argument('--disable-gpu')
 chrome_options.add_argument('--disable-dev-shm-usage')
 chromedriver = "/usr/bin/chromedriver"
 os.environ["webdriver.chrome.driver"] = chromedriver
-driver = webdriver.Chrome(chrome_options=chrome_options,executable_path=chromedriver)
 
 def run(roomlistdict):
 	weekday = datetime.date.today().isoweekday()
@@ -50,7 +49,8 @@ def run(roomlistdict):
 
 def run3F(roomlistdict):
 	
-	driver.get("https://forms.office.com/r/3AQwbrGbms")
+	driver = webdriver.Chrome(chrome_options=chrome_options,executable_path=chromedriver)
+	driver.get(os.getenv('FORM'))
 	sleep(1)
 
 	for meetingroom3 in roomlistdict[3].values():
@@ -74,7 +74,8 @@ def run3F(roomlistdict):
 
 def run5F(roomlistdict):
 	
-	driver.get("https://forms.office.com/r/3AQwbrGbms")
+	driver = webdriver.Chrome(chrome_options=chrome_options,executable_path=chromedriver)
+	driver.get(os.getenv('FORM'))
 	sleep(1)
 
 	for meetingroom5 in roomlistdict[5].values():
@@ -98,7 +99,8 @@ def run5F(roomlistdict):
 
 def run6F(roomlistdict):
 	
-	driver.get("https://forms.office.com/r/3AQwbrGbms")
+	driver = webdriver.Chrome(chrome_options=chrome_options,executable_path=chromedriver)
+	driver.get(os.getenv('FORM'))
 	sleep(1)
 
 	for meetingroom6 in roomlistdict[6].values():
@@ -122,7 +124,8 @@ def run6F(roomlistdict):
 
 def run7F(roomlistdict):
 	
-	driver.get("https://forms.office.com/r/3AQwbrGbms")
+	driver = webdriver.Chrome(chrome_options=chrome_options,executable_path=chromedriver)
+	driver.get(os.getenv('FORM'))
 	sleep(1)
 
 	for meetingroom7 in roomlistdict[7].values():
@@ -146,7 +149,8 @@ def run7F(roomlistdict):
 
 def runDaily(roomlistdict):
 	
-	driver.get("https://forms.office.com/r/3AQwbrGbms")
+	driver = webdriver.Chrome(chrome_options=chrome_options,executable_path=chromedriver)
+	driver.get(os.getenv('FORM'))
 	sleep(1)
 
 	for Dailycheckresult in roomlistdict[0].values():
