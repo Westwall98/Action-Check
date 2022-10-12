@@ -34,17 +34,17 @@ def run(roomlistdict):
 		run6F(roomlistdict)
 		run7F(roomlistdict)
 		runDaily(roomlistdict)
-		print('6F&7F Success')
+		print('Success')
 	elif weekday == 2 or weekday == 4:
 		print("将执行以下自动化：\n" + str(roomlistdict[0]) + '\n' + str(roomlistdict[3]) + '\n' + str(roomlistdict[5]))
 		run3F(roomlistdict)
 		run5F(roomlistdict)
 		runDaily(roomlistdict)
-		print('3F&5F Success')
+		print('Success')
 	elif weekday == 5:
 		print("将执行以下自动化：\n" + str(roomlistdict[0]))
 		runDaily(roomlistdict)
-		print('Daily Success')
+		print('Success')
 	
 	response = requests.post(apiurl, data = payload)
 
