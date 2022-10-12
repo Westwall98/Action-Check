@@ -14,6 +14,15 @@ roomlistdict = {
 7:{71:"Cognac",72:"Jameson",73:"Whisky",74:"White spirits",75:"Wine",76:"Martell QSS"}
 }
 
+chrome_options = webdriver.ChromeOptions()
+chrome_options.add_argument('--headless')
+chrome_options.add_argument('--no-sandbox')
+chrome_options.add_argument('--disable-gpu')
+chrome_options.add_argument('--disable-dev-shm-usage')
+chromedriver = "/usr/bin/chromedriver"
+os.environ["webdriver.chrome.driver"] = chromedriver
+driver = webdriver.Chrome(chrome_options=chrome_options,executable_path=chromedriver)
+
 def run(roomlistdict):
 	weekday = datetime.date.today().isoweekday()
 	apiurl = os.getenv('URL')
@@ -40,16 +49,9 @@ def run(roomlistdict):
 	response = requests.post(apiurl, data = payload)
 
 def run3F(roomlistdict):
-	chrome_options = webdriver.ChromeOptions()
-	chrome_options.add_argument('--headless')
-	chrome_options.add_argument('--no-sandbox')
-	chrome_options.add_argument('--disable-gpu')
-	chrome_options.add_argument('--disable-dev-shm-usage')
-	chromedriver = "/usr/bin/chromedriver"
-	os.environ["webdriver.chrome.driver"] = chromedriver
-	driver = webdriver.Chrome(chrome_options=chrome_options,executable_path=chromedriver)
+	
 	driver.get("https://forms.office.com/r/3AQwbrGbms")
-	sleep(2)
+	sleep(1)
 
 	for meetingroom3 in roomlistdict[3].values():
 		driver.find_element(By.XPATH,value="//div[@aria-posinset='0']").click()
@@ -71,16 +73,9 @@ def run3F(roomlistdict):
 	driver.close()
 
 def run5F(roomlistdict):
-	chrome_options = webdriver.ChromeOptions()
-	chrome_options.add_argument('--headless')
-	chrome_options.add_argument('--no-sandbox')
-	chrome_options.add_argument('--disable-gpu')
-	chrome_options.add_argument('--disable-dev-shm-usage')
-	chromedriver = "/usr/bin/chromedriver"
-	os.environ["webdriver.chrome.driver"] = chromedriver
-	driver = webdriver.Chrome(chrome_options=chrome_options,executable_path=chromedriver)
+	
 	driver.get("https://forms.office.com/r/3AQwbrGbms")
-	sleep(2)
+	sleep(1)
 
 	for meetingroom5 in roomlistdict[5].values():
 		driver.find_element(By.XPATH,value="//div[@aria-posinset='0']").click()
@@ -102,16 +97,9 @@ def run5F(roomlistdict):
 	driver.close()
 
 def run6F(roomlistdict):
-	chrome_options = webdriver.ChromeOptions()
-	chrome_options.add_argument('--headless')
-	chrome_options.add_argument('--no-sandbox')
-	chrome_options.add_argument('--disable-gpu')
-	chrome_options.add_argument('--disable-dev-shm-usage')
-	chromedriver = "/usr/bin/chromedriver"
-	os.environ["webdriver.chrome.driver"] = chromedriver
-	driver = webdriver.Chrome(chrome_options=chrome_options,executable_path=chromedriver)
+	
 	driver.get("https://forms.office.com/r/3AQwbrGbms")
-	sleep(2)
+	sleep(1)
 
 	for meetingroom6 in roomlistdict[6].values():
 		driver.find_element(By.XPATH,value="//div[@aria-posinset='0']").click()
@@ -133,16 +121,9 @@ def run6F(roomlistdict):
 	driver.close()
 
 def run7F(roomlistdict):
-	chrome_options = webdriver.ChromeOptions()
-	chrome_options.add_argument('--headless')
-	chrome_options.add_argument('--no-sandbox')
-	chrome_options.add_argument('--disable-gpu')
-	chrome_options.add_argument('--disable-dev-shm-usage')
-	chromedriver = "/usr/bin/chromedriver"
-	os.environ["webdriver.chrome.driver"] = chromedriver
-	driver = webdriver.Chrome(chrome_options=chrome_options,executable_path=chromedriver)
+	
 	driver.get("https://forms.office.com/r/3AQwbrGbms")
-	sleep(2)
+	sleep(1)
 
 	for meetingroom7 in roomlistdict[7].values():
 		driver.find_element(By.XPATH,value="//div[@aria-posinset='0']").click()
@@ -164,16 +145,9 @@ def run7F(roomlistdict):
 	driver.close()
 
 def runDaily(roomlistdict):
-	chrome_options = webdriver.ChromeOptions()
-	chrome_options.add_argument('--headless')
-	chrome_options.add_argument('--no-sandbox')
-	chrome_options.add_argument('--disable-gpu')
-	chrome_options.add_argument('--disable-dev-shm-usage')
-	chromedriver = "/usr/bin/chromedriver"
-	os.environ["webdriver.chrome.driver"] = chromedriver
-	driver = webdriver.Chrome(chrome_options=chrome_options,executable_path=chromedriver)
+	
 	driver.get("https://forms.office.com/r/3AQwbrGbms")
-	sleep(2)
+	sleep(1)
 
 	for Dailycheckresult in roomlistdict[0].values():
 		driver.find_element(By.XPATH,value="//div[@aria-posinset='0']").click()
