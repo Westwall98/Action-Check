@@ -2,7 +2,7 @@
 
 利用Github Action每天自动运行Auto-Check项目
 
-# 下载安装rpm包
+# 下载安装deb包
 
 https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 
