@@ -14,11 +14,6 @@ roomlistdict = {
 7:{71:"Cognac",72:"Jameson",73:"Whisky",74:"White spirits",75:"Wine",76:"Martell QSS"}
 }
 
-chrome_options = webdriver.ChromeOptions()
-chrome_options.add_argument('--headless')
-chrome_options.add_argument('--no-sandbox')
-chrome_options.add_argument('--disable-gpu')
-chrome_options.add_argument('--disable-dev-shm-usage')
 chromedriver = "/usr/bin/chromedriver"
 os.environ["webdriver.chrome.driver"] = chromedriver
 
@@ -49,7 +44,7 @@ def run(roomlistdict):
 
 def run3F(roomlistdict):
 	
-	driver = webdriver.Chrome(chrome_options=chrome_options,executable_path=chromedriver)
+	driver = webdriver.Chrome(executable_path=chromedriver)
 	driver.get(os.getenv('FORM'))
 	sleep(1)
 
@@ -74,7 +69,7 @@ def run3F(roomlistdict):
 
 def run5F(roomlistdict):
 	
-	driver = webdriver.Chrome(chrome_options=chrome_options,executable_path=chromedriver)
+	driver = webdriver.Chrome(executable_path=chromedriver)
 	driver.get(os.getenv('FORM'))
 	sleep(1)
 
@@ -99,7 +94,7 @@ def run5F(roomlistdict):
 
 def run6F(roomlistdict):
 	
-	driver = webdriver.Chrome(chrome_options=chrome_options,executable_path=chromedriver)
+	driver = webdriver.Chrome(executable_path=chromedriver)
 	driver.get(os.getenv('FORM'))
 	sleep(1)
 
@@ -124,7 +119,7 @@ def run6F(roomlistdict):
 
 def run7F(roomlistdict):
 	
-	driver = webdriver.Chrome(chrome_options=chrome_options,executable_path=chromedriver)
+	driver = webdriver.Chrome(executable_path=chromedriver)
 	driver.get(os.getenv('FORM'))
 	sleep(1)
 
@@ -149,7 +144,7 @@ def run7F(roomlistdict):
 
 def runDaily(roomlistdict):
 	
-	driver = webdriver.Chrome(chrome_options=chrome_options,executable_path=chromedriver)
+	driver = webdriver.Chrome(executable_path=chromedriver)
 	driver.get(os.getenv('FORM'))
 	sleep(1)
 
