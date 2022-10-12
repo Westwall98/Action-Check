@@ -2,6 +2,12 @@
 
 利用Github Action每天自动运行Auto-Check项目
 
+# 下载安装rpm包
+
+https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+
+sudo dpkg -i google-chrome-stable_current_amd64.deb
+
 # Linux系统设置东八区时间
 
 sudo timedatectl set-timezone Asia/Shanghai
