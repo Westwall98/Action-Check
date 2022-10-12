@@ -34,6 +34,4 @@ jobs:
           URL: ${{ secrets.URL }} 
           FORM: ${{ secrets.FORM }} 
         run: |
-          sudo cp -p ./chrome/chromedriver /usr/bin/
-          chmod -R 777 /usr/bin/chromedriver
           python ./Python/role.py
