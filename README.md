@@ -4,9 +4,9 @@
 
 # Linux系统设置东八区时间
 
-timedatectl set-timezone Asia/Shanghai
+sudo timedatectl set-timezone Asia/Shanghai
 
-# 修改Contab时区
+# 修改Crontab时区
 
 vim /etc/crontab
 
