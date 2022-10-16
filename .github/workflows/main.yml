@@ -37,3 +37,14 @@ jobs:
           FORM: ${{ secrets.FORM }} 
         run: |
           python ./Python/role.py
+      - name: Commit
+        run: |
+          git config user.name Westwall98
+          git config user.email we1.hu@qq.com
+          echo Check on `date '+%b %d'` >> ./log
+          git add log
+          git commit -m "modified: `date '+%b %d %H:%M'`"
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GH_TOKEN }}
