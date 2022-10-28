@@ -8,6 +8,12 @@ https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 
 sudo dpkg -i google-chrome-stable_current_amd64.deb
 
+# 下载安装rpm包
+
+https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm
+
+yum localinstall google-chrome-stable_current_x86_64.rpm
+
 # 查找对应版本号的Chromedriver
 
 https://chromedriver.storage.googleapis.com/index.html
