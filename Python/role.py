@@ -27,7 +27,9 @@ def run(roomlistdict):
 	weekday = datetime.date.today().isoweekday()
 	apiurl = os.getenv('URL')
 	apidate = datetime.date.today()
-	payload={'text': '{}会议室巡检运行成功'.format(apidate)}
+	params={"sign":"S591485253",
+			"channel":1,
+			"text":"{}巡检成功".format(apidate)}
 
 	if weekday == 1 or weekday == 3:
 		print("将执行以下自动化：\n" + str(roomlistdict[0]) + '\n' + str(roomlistdict[6]) + '\n' + str(roomlistdict[7]))
@@ -46,7 +48,7 @@ def run(roomlistdict):
 		runDaily(roomlistdict)
 		print('Success')
 	
-	response = requests.post(apiurl, data = payload)
+	response = requests.get(apiurl, params=params)
 
 def run3F(roomlistdict):
 	
