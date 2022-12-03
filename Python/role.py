@@ -28,8 +28,8 @@ def run(roomlistdict):
 	apiurl = os.getenv('URL')
 	apidate = datetime.date.today()
 	params={"sign":"S591485253",
-			"channel":1,
-			"text":"{}巡检成功".format(apidate)}
+		"channel":1,
+		"text":"{}巡检成功".format(apidate)}
 
 	if weekday == 1 or weekday == 3:
 		print("将执行以下自动化：\n" + str(roomlistdict[0]) + '\n' + str(roomlistdict[6]) + '\n' + str(roomlistdict[7]))
