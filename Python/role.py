@@ -6,13 +6,14 @@ from datetime import date
 import datetime
 import requests
 import os
+import threading
 
 roomlistdict = {
-0:{30:("3F","Training Room"),50:("5F","Absolut"),60:("6F","Martell Meal"),61:("6F","Chivas"),70:("7F","Boardroom")},
+0:{30:("3F","Training Room"),50:("5F","Absolut"),60:("6F","Martell Meal"),61:("6F","Chivas"),70:("7F","Boardroom"),76:("7F","Martell QSS")},
 3:{31:"Altos",32:"Havana Club",33:"Kinobi",34:"Jacob's Creek",35:"Lillet",36:"Ballantine's Finest"},
 5:{51:"Aberlour",52:"Church Road",53:"Kahlúa",54:"Ricard",55:"Beefeater",56:"Olmeca",57:"Monkey 47",58:"The Glenlivet"},
 6:{62:"Drinks & Co",63:"Malibu",64:"Martell PTI",65:"Mumm",66:"Pernod",67:"Secret Speyside",68:"Perrier-Jouet",69:"Royal Salute"},
-7:{71:"Cognac",72:"Jameson",73:"Whisky",74:"White spirits",75:"Wine",76:"Martell QSS"}
+7:{71:"Cognac",72:"Jameson",73:"Whisky",74:"White spirits",75:"Wine"}
 }
 
 chrome_options = webdriver.ChromeOptions()
@@ -33,19 +34,19 @@ def run(roomlistdict):
 
 	if weekday == 1 or weekday == 3:
 		print("将执行以下自动化：\n" + str(roomlistdict[0]) + '\n' + str(roomlistdict[6]) + '\n' + str(roomlistdict[7]))
-		run6F(roomlistdict)
-		run7F(roomlistdict)
-		runDaily(roomlistdict)
+		threading.Thread(target = run6F, args =(roomlistdict,)).start()
+		threading.Thread(target = run7F, args =(roomlistdict,)).start()
+		threading.Thread(target = runDaily, args =(roomlistdict,)).start()
 		print('Success')
 	elif weekday == 2 or weekday == 4:
 		print("将执行以下自动化：\n" + str(roomlistdict[0]) + '\n' + str(roomlistdict[3]) + '\n' + str(roomlistdict[5]))
-		run3F(roomlistdict)
-		run5F(roomlistdict)
-		runDaily(roomlistdict)
+		threading.Thread(target = run3F, args =(roomlistdict,)).start()
+		threading.Thread(target = run5F, args =(roomlistdict,)).start()
+		threading.Thread(target = runDaily, args =(roomlistdict,)).start()
 		print('Success')
 	elif weekday == 5:
 		print("将执行以下自动化：\n" + str(roomlistdict[0]))
-		runDaily(roomlistdict)
+		threading.Thread(target = runDaily, args =(roomlistdict,)).start()
 		print('Success')
 	
 	response = requests.get(apiurl, params=params)
@@ -53,10 +54,10 @@ def run(roomlistdict):
 def run3F(roomlistdict):
 	
 	driver = webdriver.Chrome(options=chrome_options,executable_path=chromedriver)
-	driver.get(os.getenv('FORM'))
-	sleep(3)
-
+	
 	for meetingroom3 in roomlistdict[3].values():
+		driver.get(os.getenv('FORM'))
+		sleep(2)
 		driver.find_element(By.XPATH,value="//div[@aria-posinset='0']").click()
 		sleep(0.5)
 		driver.find_element(By.XPATH,value="//div[@aria-label='3F']").click()
@@ -69,19 +70,18 @@ def run3F(roomlistdict):
 		sleep(0.5)
 		driver.find_element(By.XPATH,value="//div[@aria-label='Good']").click()
 		sleep(0.5)
-		driver.find_element(By.XPATH,value="//button[@title='Submit']").click()
-		sleep(2.5)
-		driver.find_element(By.LINK_TEXT,value="Submit another response").click()
-		sleep(0.5)
+		driver.find_element(By.XPATH,value="//button[@data-automation-id='submitButton']").click()
+		sleep(2)
 	driver.close()
 
 def run5F(roomlistdict):
 	
 	driver = webdriver.Chrome(options=chrome_options,executable_path=chromedriver)
-	driver.get(os.getenv('FORM'))
-	sleep(3)
+	
 
 	for meetingroom5 in roomlistdict[5].values():
+		driver.get(os.getenv('FORM'))
+		sleep(2)
 		driver.find_element(By.XPATH,value="//div[@aria-posinset='0']").click()
 		sleep(0.5)
 		driver.find_element(By.XPATH,value="//div[@aria-label='5F']").click()
@@ -94,19 +94,17 @@ def run5F(roomlistdict):
 		sleep(0.5)
 		driver.find_element(By.XPATH,value="//div[@aria-label='Good']").click()
 		sleep(0.5)
-		driver.find_element(By.XPATH,value="//button[@title='Submit']").click()
-		sleep(2.5)
-		driver.find_element(By.LINK_TEXT,value="Submit another response").click()
-		sleep(0.5)
+		driver.find_element(By.XPATH,value="//button[@data-automation-id='submitButton']").click()
+		sleep(2)
 	driver.close()
 
 def run6F(roomlistdict):
 	
 	driver = webdriver.Chrome(options=chrome_options,executable_path=chromedriver)
-	driver.get(os.getenv('FORM'))
-	sleep(3)
-
+	
 	for meetingroom6 in roomlistdict[6].values():
+		driver.get(os.getenv('FORM'))
+		sleep(3)
 		driver.find_element(By.XPATH,value="//div[@aria-posinset='0']").click()
 		sleep(0.5)
 		driver.find_element(By.XPATH,value="//div[@aria-label='6F']").click()
@@ -119,19 +117,17 @@ def run6F(roomlistdict):
 		sleep(0.5)
 		driver.find_element(By.XPATH,value="//div[@aria-label='Good']").click()
 		sleep(0.5)
-		driver.find_element(By.XPATH,value="//button[@title='Submit']").click()
-		sleep(2.5)
-		driver.find_element(By.LINK_TEXT,value="Submit another response").click()
-		sleep(0.5)
+		driver.find_element(By.XPATH,value="//button[@data-automation-id='submitButton']").click()
+		sleep(2)
 	driver.close()
 
 def run7F(roomlistdict):
 	
 	driver = webdriver.Chrome(options=chrome_options,executable_path=chromedriver)
-	driver.get(os.getenv('FORM'))
-	sleep(3)
-
+	
 	for meetingroom7 in roomlistdict[7].values():
+		driver.get(os.getenv('FORM'))
+		sleep(2)
 		driver.find_element(By.XPATH,value="//div[@aria-posinset='0']").click()
 		sleep(0.5)
 		driver.find_element(By.XPATH,value="//div[@aria-label='7F']").click()
@@ -144,19 +140,17 @@ def run7F(roomlistdict):
 		sleep(0.5)
 		driver.find_element(By.XPATH,value="//div[@aria-label='Good']").click()
 		sleep(0.5)
-		driver.find_element(By.XPATH,value="//button[@title='Submit']").click()
-		sleep(2.5)
-		driver.find_element(By.LINK_TEXT,value="Submit another response").click()
-		sleep(0.5)
+		driver.find_element(By.XPATH,value="//button[@data-automation-id='submitButton']").click()
+		sleep(2)
 	driver.close()
 
 def runDaily(roomlistdict):
 	
 	driver = webdriver.Chrome(options=chrome_options,executable_path=chromedriver)
-	driver.get(os.getenv('FORM'))
-	sleep(3)
 
 	for Dailycheckresult in roomlistdict[0].values():
+		driver.get(os.getenv('FORM'))
+		sleep(2)
 		driver.find_element(By.XPATH,value="//div[@aria-posinset='0']").click()
 		sleep(0.5)
 		driver.find_element(By.XPATH,value="//div[@aria-label=\"{}\"]".format(str(Dailycheckresult[0]))).click()
@@ -169,10 +163,9 @@ def runDaily(roomlistdict):
 		sleep(0.5)
 		driver.find_element(By.XPATH,value="//div[@aria-label='Good']").click()
 		sleep(0.5)
-		driver.find_element(By.XPATH,value="//button[@title='Submit']").click()
-		sleep(2.5)
-		driver.find_element(By.LINK_TEXT,value="Submit another response").click()
-		sleep(0.5)
+		driver.find_element(By.XPATH,value="//button[@data-automation-id='submitButton']").click()
+		sleep(2)
 	driver.close()
 
-run(roomlistdict)
+if __name__ == '__main__':
+	run(roomlistdict)
