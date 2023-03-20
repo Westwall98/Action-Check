@@ -31,22 +31,26 @@ def run(roomlistdict):
 	params={"sign":"S591485253",
 		"channel":1,
 		"text":"{}巡检成功".format(apidate)}
+	teamsroom = threading.Thread(target = runDaily, args =(roomlistdict,))
 
 	if weekday == 1 or weekday == 3:
 		print("将执行以下自动化：\n" + str(roomlistdict[0]) + '\n' + str(roomlistdict[6]) + '\n' + str(roomlistdict[7]))
 		threading.Thread(target = run6F, args =(roomlistdict,)).start()
 		threading.Thread(target = run7F, args =(roomlistdict,)).start()
-		threading.Thread(target = runDaily, args =(roomlistdict,)).start()
+		teamsroom.start()
+		teamsroom.join()
 		print('Success')
 	elif weekday == 2 or weekday == 4:
 		print("将执行以下自动化：\n" + str(roomlistdict[0]) + '\n' + str(roomlistdict[3]) + '\n' + str(roomlistdict[5]))
 		threading.Thread(target = run3F, args =(roomlistdict,)).start()
 		threading.Thread(target = run5F, args =(roomlistdict,)).start()
-		threading.Thread(target = runDaily, args =(roomlistdict,)).start()
+		teamsroom.start()
+		teamsroom.join()
 		print('Success')
 	elif weekday == 5:
 		print("将执行以下自动化：\n" + str(roomlistdict[0]))
-		threading.Thread(target = runDaily, args =(roomlistdict,)).start()
+		teamsroom.start()
+		teamsroom.join()
 		print('Success')
 	
 	response = requests.get(apiurl, params=params)
