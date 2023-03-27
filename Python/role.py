@@ -61,7 +61,7 @@ def run3F(roomlistdict):
 	
 	for meetingroom3 in roomlistdict[3].values():
 		driver.get(os.getenv('FORM'))
-		sleep(2)
+		sleep(3)
 		driver.find_element(By.XPATH,value="//div[@aria-posinset='0']").click()
 		sleep(0.5)
 		driver.find_element(By.XPATH,value="//div[@aria-label='3F']").click()
@@ -75,7 +75,7 @@ def run3F(roomlistdict):
 		driver.find_element(By.XPATH,value="//div[@aria-label='Good']").click()
 		sleep(0.5)
 		driver.find_element(By.XPATH,value="//button[@data-automation-id='submitButton']").click()
-		sleep(2)
+		sleep(3)
 	driver.close()
 
 def run5F(roomlistdict):
@@ -85,7 +85,7 @@ def run5F(roomlistdict):
 
 	for meetingroom5 in roomlistdict[5].values():
 		driver.get(os.getenv('FORM'))
-		sleep(2)
+		sleep(3)
 		driver.find_element(By.XPATH,value="//div[@aria-posinset='0']").click()
 		sleep(0.5)
 		driver.find_element(By.XPATH,value="//div[@aria-label='5F']").click()
@@ -99,7 +99,7 @@ def run5F(roomlistdict):
 		driver.find_element(By.XPATH,value="//div[@aria-label='Good']").click()
 		sleep(0.5)
 		driver.find_element(By.XPATH,value="//button[@data-automation-id='submitButton']").click()
-		sleep(2)
+		sleep(3)
 	driver.close()
 
 def run6F(roomlistdict):
@@ -122,7 +122,7 @@ def run6F(roomlistdict):
 		driver.find_element(By.XPATH,value="//div[@aria-label='Good']").click()
 		sleep(0.5)
 		driver.find_element(By.XPATH,value="//button[@data-automation-id='submitButton']").click()
-		sleep(2)
+		sleep(3)
 	driver.close()
 
 def run7F(roomlistdict):
@@ -131,7 +131,7 @@ def run7F(roomlistdict):
 	
 	for meetingroom7 in roomlistdict[7].values():
 		driver.get(os.getenv('FORM'))
-		sleep(2)
+		sleep(3)
 		driver.find_element(By.XPATH,value="//div[@aria-posinset='0']").click()
 		sleep(0.5)
 		driver.find_element(By.XPATH,value="//div[@aria-label='7F']").click()
@@ -145,7 +145,7 @@ def run7F(roomlistdict):
 		driver.find_element(By.XPATH,value="//div[@aria-label='Good']").click()
 		sleep(0.5)
 		driver.find_element(By.XPATH,value="//button[@data-automation-id='submitButton']").click()
-		sleep(2)
+		sleep(3)
 	driver.close()
 
 def runDaily(roomlistdict):
@@ -154,7 +154,7 @@ def runDaily(roomlistdict):
 
 	for Dailycheckresult in roomlistdict[0].values():
 		driver.get(os.getenv('FORM'))
-		sleep(2)
+		sleep(3)
 		driver.find_element(By.XPATH,value="//div[@aria-posinset='0']").click()
 		sleep(0.5)
 		driver.find_element(By.XPATH,value="//div[@aria-label=\"{}\"]".format(str(Dailycheckresult[0]))).click()
@@ -168,7 +168,7 @@ def runDaily(roomlistdict):
 		driver.find_element(By.XPATH,value="//div[@aria-label='Good']").click()
 		sleep(0.5)
 		driver.find_element(By.XPATH,value="//button[@data-automation-id='submitButton']").click()
-		sleep(2)
+		sleep(3)
 	driver.close()
 
 if __name__ == '__main__':
